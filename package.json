@@ -1,8 +1,7 @@
 {
-  "name": "@adobecom/college",
-  "private": true,
+  "name": "@adobecom/fedpub",
   "version": "1.0.0",
-  "description": "Website foundation technology.",
+  "description": "Adobe Federated Publishing",
   "scripts": {
     "test": "wtr \"./test/**/*.test.js\" --node-resolve --port=2000 --coverage",
     "test:watch": "npm test -- --watch",
@@ -12,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/adobecom/college.git"
+    "url": "git+https://github.com/adobecom/fedpub.git"
   },
   "author": "Adobe",
   "license": "Apache License 2.0",
   "bugs": {
-    "url": "https://github.com/adobecom/college/issues"
+    "url": "https://github.com/adobecom/fedpub/issues"
   },
-  "homepage": "https://github.com/adobecom/college#readme",
+  "homepage": "https://github.com/adobecom/fedpub#readme",
   "devDependencies": {
     "@babel/core": "7.17.7",
     "@babel/eslint-parser": "7.17.0",

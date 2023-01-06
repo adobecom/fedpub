@@ -6,3 +6,23 @@
  * 
  *
  */
+
+main {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px 0;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+main *,
+main *:before,
+main *:after {
+  box-sizing: border-box;
+}
+
+main > div > * {
+  max-width: 600px;
+  margin: auto;
+  padding: 0 20px;
+}
