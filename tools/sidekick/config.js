@@ -28,7 +28,7 @@ function hasSchema(host) {
         paths: [
           'https://main--milo--adobecom.hlx.page/docs/library/blocks.json',
           'https://main--fedpub--adobecom.hlx.page/docs/library/blocks.json',
-        ]
+        ],
       },
     ],
     plugins: [
