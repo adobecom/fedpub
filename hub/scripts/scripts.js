@@ -12,21 +12,53 @@
 
 import { setLibs } from './utils.js';
 
-// Add project-wide styles here.
-const STYLES = '';
-
 const LIBS = '/libs';
+const miloLibs = setLibs(LIBS);
+const { loadArea, loadDelayed, setConfig, getLocale } = await import(`${miloLibs}/utils/utils.js`);
 
-// Add any config options.
+// Add project-wide styles here.
+const STYLES = '/hub/styles/styles.css';
+const localesList = {
+  '': { ietf: 'en-US', tk: 'hah7vzn.css' },
+  de: { ietf: 'de-DE', tk: 'hah7vzn.css' },
+  kr: { ietf: 'ko-KR', tk: 'zfo3ouc' },
+};
+
+const locale = getLocale(localesList).prefix.replace('/', '');
+let category = null;
+let dynamicContentRoot = null;
+let categoryImsClientId = null;
+
+// Set content root based on locale
+if (locale === '') {
+  category = window.location.pathname.split('/')[1].toString();
+  dynamicContentRoot = `/hub/configRoots/${category}`;
+  if (category === '') {
+    dynamicContentRoot = '';
+  }
+} else {
+  category = window.location.pathname.split('/')[2].toString();
+  dynamicContentRoot = `/configRoots/${category}`;
+}
+
+// Set IMS client ID based on category.
+switch (category) {
+  case 'creativecloud':
+    categoryImsClientId = 'adobedotcom-cc';
+    break;
+  case 'documentcloud':
+    categoryImsClientId = 'DocumentCloud1';
+    break;
+  default:
+    categoryImsClientId = 'DocumentCloud1';
+    break;
+}
+
 const CONFIG = {
   codeRoot: '/hub',
-  contentRoot: '/hub',
-  imsClientId: 'DocumentCloud1', // This will need to change per hub.
-  locales: {
-    '': { ietf: 'en-US', tk: 'hah7vzn.css' },
-    de: { ietf: 'de-DE', tk: 'hah7vzn.css' },
-    kr: { ietf: 'ko-KR', tk: 'zfo3ouc' },
-  },
+  contentRoot: dynamicContentRoot,
+  imsClientId: categoryImsClientId,
+  locales: localesList,
 };
 
 // Default to loading the first image as eager.
@@ -41,8 +73,6 @@ const CONFIG = {
  * ------------------------------------------------------------
  */
 
-const miloLibs = setLibs(LIBS);
-
 (function loadStyles() {
   const paths = [`${miloLibs}/styles/styles.css`];
   if (STYLES) { paths.push(STYLES); }
@@ -53,8 +83,6 @@ const miloLibs = setLibs(LIBS);
     document.head.appendChild(link);
   });
 }());
-
-const { loadArea, loadDelayed, setConfig } = await import(`${miloLibs}/utils/utils.js`);
 
 (async function loadPage() {
   setConfig({ ...CONFIG, miloLibs });

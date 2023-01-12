@@ -1,13 +1,19 @@
-# Milo goes to college
-Use this project template to create a Milo site.
+# Adobe Federated Publishing
 
-## Steps
-1. Copy content folder
-2. Click "Use this template" on this project.
-3. Add the Helix Bot to your new project.
-4. Change your fstab.yaml file to point to your content.
-5. Add this project to the Helix Sidekick.
-6. Start creating your content.
+FEDS Publishing Platform for SEO Articles on A.com
+
+Origin:
+
+- https://fedpub--adobecom.hlx.page/
+
+
+## How to develop and test locally
+
+1. Install the [Helix CLI](https://github.com/adobe/helix-cli): `npm install -g @adobe/helix-cli`
+1. Clone this repository locally: `git clone https://github.com/adobecom/fedpub.git`
+1. Go to the `fedpub` directory: `cd fedpub`
+1. Start Helix Simulator: `hlx up` (opens your browser at `http://localhost:3000`)
+1. Open the `fedpub` directory in your favorite IDE and start coding :)
 
 ## Developing
 1. Install the [Helix CLI](https://github.com/adobe/helix-cli): `sudo npm install -g @adobe/helix-cli`
