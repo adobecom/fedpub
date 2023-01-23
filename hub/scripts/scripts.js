@@ -26,19 +26,13 @@ const localesList = {
 
 const locale = getLocale(localesList).prefix.replace('/', '');
 let category = null;
-let dynamicContentRoot = null;
 let categoryImsClientId = null;
 
 // Set content root based on locale
 if (locale === '') {
   category = window.location.pathname.split('/')[1].toString();
-  dynamicContentRoot = `/hub/configRoots/${category}`;
-  if (category === '') {
-    dynamicContentRoot = '';
-  }
 } else {
   category = window.location.pathname.split('/')[2].toString();
-  dynamicContentRoot = `/configRoots/${category}`;
 }
 
 // Set IMS client ID based on category.
@@ -56,7 +50,7 @@ switch (category) {
 
 const CONFIG = {
   codeRoot: '/hub',
-  contentRoot: dynamicContentRoot,
+  contentRoot: ['acrobat', 'documentcloud', 'creativecloud'],
   imsClientId: categoryImsClientId,
   locales: localesList,
 };
