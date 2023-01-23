@@ -1,0 +1,95 @@
+version: 1
+
+indices:
+  seo: &seo
+    exclude:
+      - '_documentation/**'
+      - '_draft/**'
+      - '_bench/**'
+      - '**/promotions/**'
+    target: /query-index.xlsx
+    properties:
+      title:
+        select: head > meta[property="og:title"]
+        value: |
+          attribute(el, 'content')
+      date:
+        select: none
+        value: |
+          parseTimestamp(headers['last-modified'], 'ddd, DD MMM YYYY hh:mm:ss GMT')
+      external-path:
+        select: head > meta[property="og:url"]
+        value: |
+          match(attribute(el, 'content'), 'https:\/\/[^/]+(\/.*)')
+
+  seo-au:
+    <<: *seo
+    include:
+      - 'au/acrobat/**'
+      - 'au/creativecloud/**'
+      - 'au/sign/**'
+    target: '/hub/query-index-au.xlsx'
+
+  seo-de:
+    <<: *seo
+    include:
+      - 'de/acrobat/**'
+      - 'de/creativecloud/**'
+      - 'de/sign/**'
+    target: '/hub/query-index-de.xlsx'
+
+  seo-en:
+    <<: *seo
+    include:
+      - 'acrobat/**'
+      - 'creativecloud/**'
+      - 'sign/**'
+    target: '/hub/query-index-en.xlsx'
+
+  seo-es:
+    <<: *seo
+    include:
+      - 'es/acrobat/**'
+      - 'es/creativecloud/**'
+      - 'es/sign/**'
+    target: '/hub/query-index-es.xlsx'
+
+  seo-fr:
+    <<: *seo
+    include:
+      - 'fr/acrobat/**'
+      - 'fr/creativecloud/**'
+      - 'fr/sign/**'
+    target: '/hub/query-index-fr.xlsx'
+
+  seo-it:
+    <<: *seo
+    include:
+      - 'it/acrobat/**'
+      - 'it/creativecloud/**'
+      - 'it/sign/**'
+    target: '/hub/query-index-it.xlsx'
+
+  seo-jp:
+    <<: *seo
+    include:
+      - 'jp/acrobat/**'
+      - 'jp/creativecloud/**'
+      - 'jp/sign/**'
+    target: '/hub/query-index-jp.xlsx'
+
+  seo-kr:
+    <<: *seo
+    include:
+      - 'kr/acrobat/**'
+      - 'kr/creativecloud/**'
+      - 'kr/sign/**'
+    target: '/hub/query-index-kr.xlsx'
+
+  seo-ru:
+    <<: *seo
+    include:
+      - 'ru/acrobat/**'
+      - 'ru/creativecloud/**'
+      - 'ru/sign/**'
+    target: '/hub/query-index-ru.xlsx'
