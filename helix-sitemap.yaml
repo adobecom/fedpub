@@ -4,7 +4,7 @@ sitemaps:
   seo:
     origin: https://www.adobe.com
     lastmod: YYYY-MM-DD
-    default: en-US
+    default: en
     languages:
       au:
         source: /hub/query-index-au.json
@@ -19,7 +19,7 @@ sitemaps:
       en:
         source: /hub/query-index-en.json
         destination: /hub/sitemap-en.xml
-        hreflang: en-US
+        hreflang: en
         alternate: /{path}
       es:
         source: /hub/query-index-es.json
