@@ -7,7 +7,6 @@ indices:
       - '_draft/**'
       - '_bench/**'
       - '**/promotions/**'
-    target: /query-index.xlsx
     properties:
       title:
         select: head > meta[property="og:title"]
