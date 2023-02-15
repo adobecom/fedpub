@@ -7,7 +7,7 @@ sitemaps:
     default: en
     languages:
       default:
-        source: /hub/query-index-en.json
-        destination: /hub/sitemap-en.xml
+        source: /hub/query-index-new.json
+        destination: /hub/sitemap-new.xml
         hreflang: en
         alternate: /{path}
