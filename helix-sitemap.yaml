@@ -1,4 +1,4 @@
- version: 1
+version: 1
 
 sitemaps:
   seo:
@@ -6,7 +6,7 @@ sitemaps:
     lastmod: YYYY-MM-DD
     default: en
     languages:
-      en:
+      default:
         source: /hub/query-index-en.json
         destination: /hub/sitemap-en.xml
         hreflang: en
