@@ -1,7 +1,7 @@
 version: 1
 
 sitemaps:
-  seo:
+  fedpub:
     origin: https://www.adobe.com
     lastmod: YYYY-MM-DD
     languages:
