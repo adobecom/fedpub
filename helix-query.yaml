@@ -33,3 +33,11 @@ indices:
         select: none
         value: |
           parseTimestamp(headers['last-modified'], 'ddd, DD MMM YYYY hh:mm:ss GMT')
+
+  fedpub-jp:
+    <<: *fedpub
+    include:
+      - '/jp/acrobat/**'
+      - '/jp/creativecloud/**'
+      - '/jp/sign/**'
+    target: /jp/hub/query-index.xlsx
