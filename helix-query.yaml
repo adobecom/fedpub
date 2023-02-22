@@ -1,7 +1,7 @@
 version: 1
 
 indices:
-  fedpub:
+  fedpub: &default
     include:
       - 'acrobat/**'
       - 'creativecloud/**'
@@ -34,7 +34,7 @@ indices:
         value: |
           parseTimestamp(headers['last-modified'], 'ddd, DD MMM YYYY hh:mm:ss GMT')
   fedpub-jp:
-    <<: *fedpub
+    <<: *default
     include:
       - '/jp/acrobat/**'
       - '/jp/creativecloud/**'
