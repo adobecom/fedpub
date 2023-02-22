@@ -2,10 +2,6 @@ version: 1
 
 indices:
   fedpub: &default
-    include:
-      - 'acrobat/**'
-      - 'creativecloud/**'
-      - 'sign/**'
     exclude:
       - '_documentation/**'
       - '_draft/**'
@@ -33,10 +29,75 @@ indices:
         select: none
         value: |
           parseTimestamp(headers['last-modified'], 'ddd, DD MMM YYYY hh:mm:ss GMT')
+
+  fedpub-au:
+    <<: *default
+    include:
+      - '/au/acrobat/**'
+      - '/au/creativecloud/**'
+      - '/au/sign/**' 
+    target: '/hub/query-index-au.xlsx'
+
+  fedpub-de:
+    <<: *default
+    include:
+      - '/de/acrobat/**'
+      - '/de/creativecloud/**'
+      - '/de/sign/**'
+    target: '/hub/query-index-de.xlsx'
+
+  fedpub-en:
+    <<: *default
+    include:
+      - '/acrobat/**'
+      - '/creativecloud/**'
+      - '/sign/**'
+    target: '/hub/query-index-en.xlsx'
+
+  fedpub-es:
+    <<: *default
+    include:
+      - '/es/acrobat/**'
+      - '/es/creativecloud/**'
+      - '/es/sign/**'
+    target: '/hub/query-index-es.xlsx'
+
+  fedpub-fr:
+    <<: *default
+    include:
+      - '/fr/acrobat/**'
+      - '/fr/creativecloud/**'
+      - '/fr/sign/**'
+    target: '/hub/query-index-fr.xlsx'
+
+  fedpub-it:
+    <<: *default
+    include:
+      - '/it/acrobat/**'
+      - '/it/creativecloud/**'
+      - '/it/sign/**'
+    target: '/hub/query-index-it.xlsx'
+
   fedpub-jp:
     <<: *default
     include:
       - '/jp/acrobat/**'
       - '/jp/creativecloud/**'
       - '/jp/sign/**'
-    target: /hub/query-index-jp.xlsx
+    target: '/hub/query-index-jp.xlsx'
+
+  fedpub-kr:
+    <<: *default
+    include:
+      - '/kr/acrobat/**'
+      - '/kr/creativecloud/**'
+      - '/kr/sign/**'
+    target: '/hub/query-index-kr.xlsx'
+
+  fedpub-ru:
+    <<: *default
+    include:
+      - '/ru/acrobat/**'
+      - '/ru/creativecloud/**'
+      - '/ru/sign/**'
+    target: '/hub/query-index-ru.xlsx'
