@@ -11,7 +11,7 @@ indices:
       - '_draft/**'
       - '_bench/**'
       - '**/promotions/**'
-    target: /hub/query-index-test.xlsx
+    target: /hub/query-index.xlsx
     properties:
       title:
         select: head > meta[property="og:title"]
@@ -39,4 +39,4 @@ indices:
       - '/jp/acrobat/**'
       - '/jp/creativecloud/**'
       - '/jp/sign/**'
-    target: /jp/hub/query-index.xlsx
+    target: /hub/query-index-jp.xlsx

@@ -7,11 +7,11 @@ sitemaps:
     languages:
       en:
         source: /hub/query-index.json
-        destination: /hub/sitemap.xml
+        destination: /hub/sitemap-en.xml
         hreflang: en
         alternate: /{path}
       jp:
-        source: /jp/hub/query-index.json
-        destination: /jp/hub/sitemap.xml
+        source: /hub/query-index-jp.json
+        destination: /hub/sitemap-jp.xml
         hreflang: jp
         alternate: /{path}
