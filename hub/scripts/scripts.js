@@ -13,7 +13,7 @@
 import { setLibs } from './utils.js';
 
 // Add project-wide styles here.
-const STYLES = '';
+const STYLES = '/hub/styles/styles.css';
 
 const LIBS = '/libs';
 
