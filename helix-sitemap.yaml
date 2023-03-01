@@ -18,7 +18,7 @@ sitemaps:
       en:
         source: /hub/query-index.json
         destination: /hub/sitemap-en.xml
-        hreflang: en
+        hreflang: en-US
         alternate: /{path}        
       es:
         source: /hub/query-index-es.json
