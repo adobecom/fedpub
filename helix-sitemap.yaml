@@ -16,7 +16,7 @@ sitemaps:
         hreflang: de-DE
         alternate: /de/{path}
       en:
-        source: /hub/query-index.json
+        source: /hub/query-index-en.json
         destination: /hub/sitemap-en.xml
         hreflang: en-US
         alternate: /{path}        
