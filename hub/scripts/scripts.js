@@ -26,7 +26,9 @@ const CONFIG = {
     '': { ietf: 'en-US', tk: 'hah7vzn.css' },
     de: { ietf: 'de-DE', tk: 'hah7vzn.css' },
     kr: { ietf: 'ko-KR', tk: 'zfo3ouc' },
+    TH_th: { ietf: 'TH–th', tk: 'zfo3ouc' },
   },
+  geoRouting: 'on',
 };
 
 // Default to loading the first image as eager.
@@ -34,6 +36,22 @@ const CONFIG = {
   const lcpImg = document.querySelector('img');
   lcpImg?.setAttribute('loading', 'eager');
 }());
+
+function decoratePromotion() {
+  if (document.querySelector('main .promotion') instanceof HTMLElement) {
+    return;
+  }
+
+  const promotionElement = document.querySelector('head meta[name="promotion"]');
+  if (!promotionElement) {
+    return;
+  }
+
+  const promo = document.createElement('div');
+  promo.classList.add('promotion');
+  promo.setAttribute('data-promotion', promotionElement.getAttribute('content').toLowerCase());
+  document.querySelector('main > div').appendChild(promo);
+}
 
 /*
  * ------------------------------------------------------------
@@ -57,6 +75,7 @@ const miloLibs = setLibs(LIBS);
 const { loadArea, loadDelayed, setConfig } = await import(`${miloLibs}/utils/utils.js`);
 
 (async function loadPage() {
+  decoratePromotion();
   setConfig({ ...CONFIG, miloLibs });
   await loadArea();
   loadDelayed();
