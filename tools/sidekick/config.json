@@ -1,6 +1,7 @@
 {
   "project": "FedPub",
   "host": "adobe.com",
+  "trustedHosts": ["milo.adobe.com", "main--milo--adobecom.hlx.page"],
   "libraries": [
     {
       "text": "Blocks",
